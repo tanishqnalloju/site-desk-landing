@@ -1,0 +1,19 @@
+{
+  // Citeable marketing landing — static assets via Workers
+  // Public: https://sites.tanishqnalloju.com
+  "name": "citeable-sites",
+  "account_id": "2161e11f506e6d2afde89f05a6f438eb",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "sites.tanishqnalloju.com", "custom_domain": true }
+  ],
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}
