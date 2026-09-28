@@ -1,14 +1,12 @@
 {
-  // Citeable marketing landing — static assets via Workers
-  // Public: https://sites.tanishqnalloju.com
-  "name": "citeable-sites",
+  // Site Desk marketing landing — static assets via Workers
+  // Live now: https://site-desk-landing.<account>.workers.dev
+  // Custom domain: TBD — Tanishq will assign subdomain letter later (see DEPLOY.md)
+  "name": "site-desk-landing",
   "account_id": "2161e11f506e6d2afde89f05a6f438eb",
   "main": "src/worker.js",
   "compatibility_date": "2026-09-01",
   "workers_dev": true,
-  "routes": [
-    { "pattern": "sites.tanishqnalloju.com", "custom_domain": true }
-  ],
   "assets": {
     "directory": "./public",
     "binding": "ASSETS",

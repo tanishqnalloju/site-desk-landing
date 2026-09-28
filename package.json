@@ -1,8 +1,8 @@
 {
-  "name": "citeable-landing",
+  "name": "site-desk-landing",
   "version": "1.0.0",
   "private": true,
-  "description": "Citeable — customized SEO + answer-engine optimized websites for India SMBs and freelancers (₹2,000 flat).",
+  "description": "Site Desk — customized SEO + answer-engine optimized websites for India SMBs and freelancers (₹2,000 flat).",
   "scripts": {
     "deploy": "wrangler deploy",
     "dev": "wrangler dev"

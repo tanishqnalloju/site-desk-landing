@@ -1,33 +1,47 @@
-# Deploy Citeable landing
+# Deploy Site Desk landing
 
-Target: **https://sites.tanishqnalloju.com**  
-Worker name: `citeable-sites`  
-Pattern: Cloudflare Workers Assets (same as ppp-calculator / kingindex-v2 desks)
+Worker name: `site-desk-landing`  
+Live now: **https://site-desk-landing.tanishq-nalloju.workers.dev**  
+Custom domain: **not bound yet** — wait for Tanishq’s subdomain letter.
+
+Pattern: Cloudflare Workers Assets (same as ppp-calculator / kingindex-v2 desks).
 
 ## Prerequisites
 
 - Node.js 18+
-- `CLOUDFLARE_API_TOKEN` with Workers deploy + custom domain permissions, **or** `npx wrangler login`
-- Zone `tanishqnalloju.com` on the same Cloudflare account
+- `CLOUDFLARE_API_TOKEN` with Workers deploy permissions, **or** `npx wrangler login`
 
-## Install & deploy
+## Install & deploy (workers.dev)
 
 ```bash
-cd /workspace/citeable-landing   # or your clone
+cd /workspace/site-desk-landing   # or your clone
 npm install
 npx wrangler deploy
 ```
 
-`wrangler.jsonc` already sets:
+`wrangler.jsonc` currently has **no** `routes` / custom domain — only `workers_dev: true`.
 
-- `name`: `citeable-sites`
-- `routes`: `sites.tanishqnalloju.com` with `custom_domain: true`
-- `assets.directory`: `./public`
+## Custom domain (placeholder — do this later)
 
-Custom domain attachment is handled by Wrangler when the zone is on this account. If the route fails, attach in the dashboard:
+When the subdomain letter is chosen (example only: `sites.tanishqnalloju.com` or another host), then:
 
-1. Workers → `citeable-sites` → Settings → Domains & Routes  
-2. Add custom domain `sites.tanishqnalloju.com`
+1. Add a route to `wrangler.jsonc`:
+
+```jsonc
+"routes": [
+  { "pattern": "<SUBDOMAIN>.tanishqnalloju.com", "custom_domain": true }
+]
+```
+
+2. Update canonical / OG / JSON-LD / robots.txt / sitemap.xml to that HTTPS origin.
+3. Redeploy: `npx wrangler deploy`
+4. If auto-attach fails, in the dashboard: Workers → `site-desk-landing` → Domains & Routes → Add custom domain.
+
+Optional DNS fallback (prefer Workers Custom Domain UI):
+
+| Type | Name | Target |
+|---|---|---|
+| CNAME | `<SUBDOMAIN>` | `site-desk-landing.tanishq-nalloju.workers.dev` |
 
 ## Local preview
 
@@ -35,22 +49,12 @@ Custom domain attachment is handled by Wrangler when the zone is on this account
 npx wrangler dev
 ```
 
-## DNS (only if custom_domain does not auto-attach)
+## Verify (current)
 
-If the hostname is not proxied automatically:
-
-| Type | Name | Target |
-|---|---|---|
-| CNAME | `sites` | `citeable-sites.<your-subdomain>.workers.dev` |
-
-Prefer the Workers **Custom domain** UI (proxied orange cloud) over a manual CNAME when possible.
-
-## Verify after deploy
-
-- https://sites.tanishqnalloju.com/
-- https://sites.tanishqnalloju.com/robots.txt
-- https://sites.tanishqnalloju.com/sitemap.xml
-- View-source: title, canonical, JSON-LD blocks, ₹2,000 pricing
+- https://site-desk-landing.tanishq-nalloju.workers.dev/
+- …/robots.txt
+- …/sitemap.xml
+- View-source: title, canonical, JSON-LD, ₹2,000 pricing, “Site Desk” branding
 
 ## Rollback
 

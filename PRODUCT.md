@@ -1,18 +1,19 @@
-# Citeable
+# Site Desk
 
-**One-line definition:** Citeable builds customized SEO and answer-engine (AO) optimized websites for small businesses and freelancers in India — flat ₹2,000 INR per site.
+**One-line definition:** Site Desk builds customized SEO and answer-engine (AO) optimized websites for small businesses and freelancers in India — flat ₹2,000 INR per site.
 
 ## Offer
 
 | Field | Value |
 |---|---|
-| Product name | Citeable |
+| Product name | Site Desk |
 | Price | ₹2,000 INR flat per site |
 | Plans | One only — no tiers |
 | Audience | India SMBs and freelancers |
 | Operator | Tanishq Nalloju |
 | Contact | tanishqnrao@gmail.com |
-| Marketing URL | https://sites.tanishqnalloju.com |
+| Marketing URL (now) | https://site-desk-landing.tanishq-nalloju.workers.dev |
+| Marketing URL (custom) | TBD — subdomain letter assigned later |
 
 ## What the customer gets
 
@@ -21,7 +22,7 @@
 3. **AO structure** — clear entity facts, quotable definition, FAQ, JSON-LD (Organization + Service + FAQPage).
 4. **Hosting** — on the customer’s domain or a subdomain they control; DNS documented honestly. Domain registration is separate.
 
-## What Citeable does not claim
+## What Site Desk does not claim
 
 - No ranking guarantees
 - No AI-overview / featured-snippet guarantees
@@ -30,4 +31,4 @@
 
 ## This marketing page
 
-This repo is the Citeable marketing landing itself. It practices the SEO + AO pattern it sells.
+This repo is the Site Desk marketing landing itself. It practices the SEO + AO pattern it sells.
